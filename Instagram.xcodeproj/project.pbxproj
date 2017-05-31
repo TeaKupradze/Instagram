@@ -76,7 +76,7 @@
 				932F43A11EDEA1C60027452F /* Fonts */,
 				932F439E1EDEA19F0027452F /* ImageRecource */,
 			);
-			name = Resource;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		932F439E1EDEA19F0027452F /* ImageRecource */ = {
@@ -84,7 +84,7 @@
 			children = (
 				932F43911EDEA0B90027452F /* Assets.xcassets */,
 			);
-			name = ImageRecource;
+			path = ImageRecource;
 			sourceTree = "<group>";
 		};
 		932F43A11EDEA1C60027452F /* Fonts */ = {
@@ -92,7 +92,7 @@
 			children = (
 				932F439F1EDEA1B80027452F /* Billabong.ttf */,
 			);
-			name = Fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		932F43A21EDEB7F90027452F /* View */ = {
@@ -101,7 +101,7 @@
 				932F43931EDEA0B90027452F /* LaunchScreen.storyboard */,
 				932F438E1EDEA0B90027452F /* Main.storyboard */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		932F43A31EDEB80A0027452F /* Controller */ = {
@@ -110,7 +110,7 @@
 				932F438C1EDEA0B90027452F /* ViewController.swift */,
 				932F43A41EDEB8960027452F /* IstagramTableViewCell.swift */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		932F43A81EDEBA650027452F /* Model */ = {
@@ -118,7 +118,7 @@
 			children = (
 				932F43AB1EDEBB260027452F /* UserInfo.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
