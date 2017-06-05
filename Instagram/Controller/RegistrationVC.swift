@@ -74,6 +74,22 @@ extension RegistrationVC : UITextFieldDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.name {
+            self.fullName.becomeFirstResponder()
+        }
+        if textField == self.fullName {
+            self.mail.becomeFirstResponder()
+        }
+        if textField == self.mail{
+            self.userName.becomeFirstResponder()
+        }
+        if  textField == self.userName{
+            self.password.becomeFirstResponder()
+        }
+        if textField == self.password{
+            self.password.resignFirstResponder()
+        }
+        
         return true
     }
     
