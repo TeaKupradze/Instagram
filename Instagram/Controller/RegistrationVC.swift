@@ -20,12 +20,10 @@ class RegistrationVC: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      userName.text = loadName()
-    password.text = loadPassword()
+        userName.text = loadName()
+        password.text = loadPassword()
         // Do any additional setup after loading the view.
     }
-    
-    
     func saveData (userName : String , password : String){
         let defaults = UserDefaults.standard
         defaults.set(userName, forKey: "rrrUserName")
@@ -53,13 +51,14 @@ class RegistrationVC: UIViewController {
             return " "
         }
     }
-    
-    
-    
+ 
     @IBAction func userRegister(_ sender: Any) {
         
         if ((userName.text?.characters.count)! > 0 && (password.text?.characters.count)! > 0){
             saveData(userName: userName.text!, password: password.text!)
+            name.text = " "
+            fullName.text = " "
+            mail.text = " "
             userName.text = " "
             password.text = " "
             resultLbl.text = "რეგისტრაცია წარმატებით დასრულდა"
@@ -71,3 +70,11 @@ class RegistrationVC: UIViewController {
     }
 
     }
+extension RegistrationVC : UITextFieldDelegate {
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+}

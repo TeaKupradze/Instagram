@@ -51,34 +51,23 @@ class LogInVC: UIViewController {
             return " "
         }
     }
- 
-    
-    @IBAction func backBtn(_ sender: Any) {
-         dismiss(animated: true, completion: nil)
-    }
-    
-    
+  
     @IBAction func logInBtn(_ sender: Any) {
     
         if username.text == loadName() && password.text == loadPassword() {
             
         let nextController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarIdentity") as! TabBarController
             self.navigationController?.pushViewController(nextController, animated: true)
-            
             username.text = " "
             password.text = " "
         }
         else {
             print("ar sheiqmna contoleri")
-            
-        }
+            }
 
     }
     
-    
     @IBAction func registrationBtn(_ sender: Any) {
-        
-       
     }
     
     }
