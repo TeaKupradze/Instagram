@@ -354,7 +354,7 @@
         <!--Log InVC-->
         <scene sceneID="Drb-9K-Ohj">
             <objects>
-                <viewController id="GIB-dh-SMB" customClass="LogInVC" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInIdentiyy" id="GIB-dh-SMB" customClass="LogInVC" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nYD-2C-08S"/>
                         <viewControllerLayoutGuide type="bottom" id="BTK-hJ-R4r"/>
@@ -406,7 +406,6 @@
                                 </state>
                                 <connections>
                                     <action selector="registrationBtn:" destination="GIB-dh-SMB" eventType="touchUpInside" id="4Qe-3b-8zk"/>
-                                    <segue destination="KF2-r4-E3i" kind="show" id="YpE-0o-S69"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -426,7 +425,7 @@
         <!--RegistrationVC-->
         <scene sceneID="erV-19-8Cy">
             <objects>
-                <viewController id="KF2-r4-E3i" customClass="RegistrationVC" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationIdentity" id="KF2-r4-E3i" customClass="RegistrationVC" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eLn-df-I4g"/>
                         <viewControllerLayoutGuide type="bottom" id="lcQ-3r-hxD"/>

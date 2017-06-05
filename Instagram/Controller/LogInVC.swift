@@ -20,6 +20,8 @@ class LogInVC: UIViewController {
         super.viewDidLoad()
         username.text = loadName()
         password.text = loadPassword()
+        password.text = " "
+        username.text = " "
 
         // Do any additional setup after loading the view.
     }
@@ -68,6 +70,9 @@ class LogInVC: UIViewController {
     }
     
     @IBAction func registrationBtn(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationIdentity") as!RegistrationVC
+        self.navigationController?.pushViewController(vc, animated:true)
+        
     }
     
     }

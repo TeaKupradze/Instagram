@@ -53,7 +53,6 @@ class RegistrationVC: UIViewController {
     }
  
     @IBAction func userRegister(_ sender: Any) {
-        
         if ((userName.text?.characters.count)! > 0 && (password.text?.characters.count)! > 0){
             saveData(userName: userName.text!, password: password.text!)
             name.text = " "
@@ -62,14 +61,14 @@ class RegistrationVC: UIViewController {
             userName.text = " "
             password.text = " "
             resultLbl.text = "რეგისტრაცია წარმატებით დასრულდა"
-            dismiss(animated: true, completion: nil)
         }
         else {
             resultLbl.text = "ვერ დარეგისტრირდა"
         }
+        dismiss(animated: true, completion: nil)
+    }
     }
 
-    }
 extension RegistrationVC : UITextFieldDelegate {
     
     
