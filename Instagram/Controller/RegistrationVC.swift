@@ -1,28 +1,30 @@
 //
-//  LogInVC.swift
+//  RegistrationVC.swift
 //  Instagram
 //
-//  Created by Tea Kupradze on 6/2/17.
+//  Created by Tea Kupradze on 6/3/17.
 //  Copyright © 2017 Lemondo. All rights reserved.
 //
 
 import UIKit
 
-class LogInVC: UIViewController {
+class RegistrationVC: UIViewController {
     
-    //IBOutlet
-    @IBOutlet weak var username: UITextField!
+    
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var fullName: UITextField!
+    @IBOutlet weak var mail: UITextField!
+    @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
-    
-    
-    
+    @IBOutlet weak var resultLbl: UILabel!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        username.text = loadName()
-        password.text = loadPassword()
-
+      userName.text = loadName()
+    password.text = loadPassword()
         // Do any additional setup after loading the view.
     }
+    
     
     func saveData (userName : String , password : String){
         let defaults = UserDefaults.standard
@@ -51,37 +53,21 @@ class LogInVC: UIViewController {
             return " "
         }
     }
- 
-    
-    @IBAction func backBtn(_ sender: Any) {
-         dismiss(animated: true, completion: nil)
-    }
     
     
-    @IBAction func logInBtn(_ sender: Any) {
     
-        if username.text == loadName() && password.text == loadPassword() {
-            
-        let nextController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarIdentity") as! TabBarController
-            self.navigationController?.pushViewController(nextController, animated: true)
-            
-            username.text = " "
+    @IBAction func userRegister(_ sender: Any) {
+        
+        if ((userName.text?.characters.count)! > 0 && (password.text?.characters.count)! > 0){
+            saveData(userName: userName.text!, password: password.text!)
+            userName.text = " "
             password.text = " "
+            resultLbl.text = "რეგისტრაცია წარმატებით დასრულდა"
+            dismiss(animated: true, completion: nil)
         }
         else {
-            print("ar sheiqmna contoleri")
-            
+            resultLbl.text = "ვერ დარეგისტრირდა"
         }
-
-    }
-    
-    
-    @IBAction func registrationBtn(_ sender: Any) {
-        
-       
-    }
-    
     }
 
- 
-
+    }
