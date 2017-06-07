@@ -13,9 +13,7 @@ class LogInVC: UIViewController {
     //IBOutlet
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
-    
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         username.text = loadName()
@@ -76,6 +74,18 @@ class LogInVC: UIViewController {
     }
     
     }
-
- 
+extension  LogInVC : UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.username {
+            self.password.becomeFirstResponder()
+        }
+        if textField == self.password{
+            self.password.resignFirstResponder()
+        }
+        return true
+        
+    }
+    
+}
 
