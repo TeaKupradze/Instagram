@@ -31,7 +31,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1d5-Vq-WFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="-140"/>
+            <point key="canvasLocation" x="-86" y="-189"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Npf-YB-1t7">
@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="-183" y="-843"/>
         </scene>
-        <!--View Controller-->
+        <!--CameraVC-->
         <scene sceneID="xz6-JS-od1">
             <objects>
-                <viewController id="YZ5-fz-K5h" sceneMemberID="viewController">
+                <viewController id="YZ5-fz-K5h" customClass="CameraVC" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Yr-Ez-SGy"/>
                         <viewControllerLayoutGuide type="bottom" id="277-37-cof"/>
@@ -86,15 +86,48 @@
                     <view key="view" contentMode="scaleToFill" id="q0a-el-lUS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTk-rq-eSK">
+                                <rect key="frame" x="0.0" y="588" width="138" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Photo Library"/>
+                                <connections>
+                                    <action selector="OpenPhotoLibrary:" destination="YZ5-fz-K5h" eventType="touchUpInside" id="6Oo-aS-el1"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orv-pS-CZG">
+                                <rect key="frame" x="0.0" y="36" width="375" height="544"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uq4-cI-9A8">
+                                <rect key="frame" x="164" y="588" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="SaveBtn:" destination="YZ5-fz-K5h" eventType="touchUpInside" id="zsf-YT-KVf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5M-wC-bTO">
+                                <rect key="frame" x="234" y="588" width="141" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="OpenCamera:" destination="YZ5-fz-K5h" eventType="touchUpInside" id="X6p-gB-p5A"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="contacts" id="adF-u8-Qfg">
+                    <tabBarItem key="tabBarItem" title="" image="CameraIcon" id="adF-u8-Qfg">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="imageView" destination="orv-pS-CZG" id="EZh-dN-ItJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ec2-6U-Crv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1102" y="-170"/>
+            <point key="canvasLocation" x="-1103.2" y="-170.46476761619192"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lYH-lv-Cku">
@@ -537,7 +570,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4NS-Ha-CbS" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5AR-No-ppT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5AR-No-ppT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -554,11 +587,11 @@
     <resources>
         <image name="Bookmarks" width="50" height="50"/>
         <image name="Camera" width="50" height="50"/>
+        <image name="CameraIcon" width="25" height="25"/>
         <image name="Comments" width="50" height="50"/>
         <image name="Heart" width="50" height="50"/>
         <image name="Sent" width="50" height="50"/>
         <image name="addIcon" width="25" height="25"/>
-        <image name="contacts" width="30" height="25"/>
         <image name="searchIcon" width="25" height="25"/>
     </resources>
 </document>
