@@ -13,7 +13,7 @@ class LogInVC: UIViewController {
     //IBOutlet
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         username.text = loadName()
@@ -55,12 +55,12 @@ class LogInVC: UIViewController {
     @IBAction func logInBtn(_ sender: Any) {
     
         if username.text == loadName() && password.text == loadPassword() {
-            
         let nextController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarIdentity") as! TabBarController
             self.navigationController?.pushViewController(nextController, animated: true)
             username.text = " "
             password.text = " "
         }
+            
         else {
             print("ar sheiqmna contoleri")
             }

@@ -98,6 +98,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orv-pS-CZG">
                                 <rect key="frame" x="0.0" y="36" width="375" height="544"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ipk-3N-F1t" appends="YES" id="HFS-dH-zgt"/>
+                                    <outletCollection property="gestureRecognizers" destination="zIx-Xx-tj6" appends="YES" id="s29-us-JZK"/>
+                                    <outletCollection property="gestureRecognizers" destination="jwf-R3-poR" appends="YES" id="pqT-84-v9Q"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uq4-cI-9A8">
                                 <rect key="frame" x="164" y="588" width="46" height="30"/>
@@ -126,6 +133,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ec2-6U-Crv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="ipk-3N-F1t">
+                    <connections>
+                        <action selector="RotateionGesture:" destination="YZ5-fz-K5h" id="XEt-q5-RBN"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="zIx-Xx-tj6">
+                    <connections>
+                        <action selector="PanGesture:" destination="YZ5-fz-K5h" id="s9b-GM-Q2T"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="jwf-R3-poR">
+                    <connections>
+                        <action selector="PinchGesture:" destination="YZ5-fz-K5h" id="fGh-0d-smN"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1103.2" y="-170.46476761619192"/>
         </scene>
