@@ -65,7 +65,7 @@ class RegistrationVC: UIViewController {
         else {
             resultLbl.text = "ვერ დარეგისტრირდა"
         }
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     }
 

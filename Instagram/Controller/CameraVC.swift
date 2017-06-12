@@ -64,30 +64,4 @@ class CameraVC: UIViewController , UIImagePickerControllerDelegate , UINavigatio
     @IBAction func SaveBtn(_ sender: Any) {
     UIImageWriteToSavedPhotosAlbum(imageView.image!, self,  #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
 }
-   
-    //Recognizer
-    @IBAction func PanGesture(_ sender: UIPanGestureRecognizer) {
-        let translation = sender.translation(in: self.view)
-        if let view = sender.view {
-            view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
-            
-        }
-        sender.setTranslation(CGPoint.zero, in: self.view)
-        
-    }
-  
-    @IBAction func PinchGesture(_ sender: UIPinchGestureRecognizer) {
-        
-    }
-    
-    @IBAction func RotateionGesture(_ sender: Any) {
-//        if let view = (sender as AnyObject).view { // check if view inside sender exsits a.k.a imageView
-//            view.transform = view.transform.rotated(by: sender.rotation) // set rotation got from sender
-//            (sender as AnyObject).rotation = 0
-//        }
-    }
-
-        
-        
-        
-    }
+}
