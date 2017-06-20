@@ -12,16 +12,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var istagramTableView: UITableView!
-    
+    @IBOutlet weak var istagramCollectionView: UICollectionView!
+    //Data Object
     var userDataObject = [UserInfo]()
-
+    lazy var userFbObject = [UserFB]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserData()
+        fetchInformation()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
     func getUserData() {
         for  i in 1...8 {
             let object = UserInfo ()
@@ -29,14 +30,40 @@ class ViewController: UIViewController {
             object.userImg = UIImage (named: "UserImage_\(i)")
             object.name = "TeaKUpradze_\(i)"
             userDataObject.append(object)
-    
         }
-        
-       self.istagramTableView.delegate = self
-       self.istagramTableView.dataSource = self
+       
+    }
+    func fetchInformation () {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let worker = HttpWorker()
+            worker.fetchUserInformationFromRemoteServer { [weak self] (object) in
+                if object != nil {
+                    self?.userFbObject = object!
+                    self?.dataSourceAndDelegation(with: true) // we have objects so lets init tableView and CollectionView
+                } else {
+                    self?.dataSourceAndDelegation(with: false) // we do not have any object so lets deAlloc Table and Collection
+                }
+            }
+        }
     }
 
-
+    private func dataSourceAndDelegation (with status: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            if status {
+                self?.istagramTableView.delegate = self
+                self?.istagramTableView.dataSource = self
+                self?.istagramCollectionView.delegate = self as! UICollectionViewDelegate
+                self?.istagramCollectionView.dataSource = self as! UICollectionViewDataSource
+            } else {
+                self?.istagramTableView.delegate = self
+                self?.istagramTableView.dataSource = self
+                self?.istagramCollectionView.delegate = nil
+                self?.istagramCollectionView.dataSource = nil
+            }
+            self?.istagramCollectionView.reloadData()
+            self?.istagramTableView.reloadData()
+                }
+    }
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
@@ -67,10 +94,25 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-    
-    
-    
-    
-    
 }
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.userFbObject.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"xxxNewsFeedCollCell", for: indexPath) as? IstagramCollectionViewCell else {
+            fatalError("Could not dequeue cell with identifier xxxNewsFeedCollCell")
+        }
+        
+        let object = self.userFbObject[indexPath.item]
+        
+        // assign avatar
+        let url = URL(string: object.avatar!) // cast string to url
+        cell.fbAvatar.sd_setImage(with: url)
+        cell.fbUserName.text = object.fbName
+                return cell
+    }
+}
+

@@ -11,6 +11,6 @@ import UIKit
 struct UserFB {
     var email: String?
     var id: String!
-    var name: String!
-    var avatar: URL?
+    var fbName: String!
+    var avatar: String?
 }
