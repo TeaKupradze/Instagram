@@ -112,7 +112,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let url = URL(string: object.avatar!) // cast string to url
         cell.fbAvatar.sd_setImage(with: url)
         cell.fbUserName.text = object.fbName
-                return cell
+        return cell
     }
 }
 

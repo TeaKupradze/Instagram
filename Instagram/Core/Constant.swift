@@ -12,6 +12,7 @@ struct Constants {
     
     struct Http {
         static let getUrl = "https://mgldev.ge/Users.json"
+        static let skinsUrl = "http://data.apps.lemon.do/kbdskinsnew/"
     }
     
 }

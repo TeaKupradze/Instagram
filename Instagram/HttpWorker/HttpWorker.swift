@@ -26,7 +26,7 @@ class HttpWorker {
                                 var user = UserFB() // create local userObject
                                 
                                 user.avatar = item["img"]
-                                user.fbName = item["fbname"]
+                                user.fbName = item["name"]
                                 
                                 userArray.append(user) // created user should be appended to the array of users
                             }
