@@ -13,4 +13,5 @@ struct UserFB {
     var id: String!
     var fbName: String!
     var avatar: String?
+    var avatar1:URL!
 }
