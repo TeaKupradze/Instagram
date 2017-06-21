@@ -19,6 +19,8 @@
 		932F43A51EDEB8960027452F /* IstagramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F43A41EDEB8960027452F /* IstagramTableViewCell.swift */; };
 		932F43AC1EDEBB260027452F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F43AB1EDEBB260027452F /* UserInfo.swift */; };
 		9334D1A31EE33232003B78C7 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334D1A21EE33232003B78C7 /* RegistrationVC.swift */; };
+		933DACA71EFA441C00963AC2 /* TopBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933DACA61EFA441C00963AC2 /* TopBarView.xib */; };
+		933DACA91EFA48D200963AC2 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DACA81EFA48D200963AC2 /* TopBarView.swift */; };
 		933E2C0A1EF8106700798B65 /* IstagramCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E2C091EF8106700798B65 /* IstagramCollectionViewCell.swift */; };
 		9356C4BB1EE1DA1900F7D34D /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9356C4BA1EE1DA1900F7D34D /* LogInVC.swift */; };
 		935A07AD1EEA8D15001E6062 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A07AC1EEA8D15001E6062 /* CameraVC.swift */; };
@@ -43,6 +45,8 @@
 		932F43A41EDEB8960027452F /* IstagramTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IstagramTableViewCell.swift; sourceTree = "<group>"; };
 		932F43AB1EDEBB260027452F /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		9334D1A21EE33232003B78C7 /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		933DACA61EFA441C00963AC2 /* TopBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopBarView.xib; sourceTree = "<group>"; };
+		933DACA81EFA48D200963AC2 /* TopBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		933E2C091EF8106700798B65 /* IstagramCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IstagramCollectionViewCell.swift; sourceTree = "<group>"; };
 		9356C4BA1EE1DA1900F7D34D /* LogInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		935A07AC1EEA8D15001E6062 /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 			children = (
 				932F43931EDEA0B90027452F /* LaunchScreen.storyboard */,
 				932F438E1EDEA0B90027452F /* Main.storyboard */,
+				933DACA61EFA441C00963AC2 /* TopBarView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				9398771A1EF27D6C000BBB32 /* SettingsVC.swift */,
+				933DACA81EFA48D200963AC2 /* TopBarView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				932F43951EDEA0B90027452F /* LaunchScreen.storyboard in Resources */,
+				933DACA71EFA441C00963AC2 /* TopBarView.xib in Resources */,
 				932F43921EDEA0B90027452F /* Assets.xcassets in Resources */,
 				932F43901EDEA0B90027452F /* Main.storyboard in Resources */,
 				932F43A01EDEA1C10027452F /* Billabong.ttf in Resources */,
@@ -359,6 +366,7 @@
 				93AEE5F51EF816F2006EB920 /* Constant.swift in Sources */,
 				935A07AD1EEA8D15001E6062 /* CameraVC.swift in Sources */,
 				937FE2FE1EE324C70060EFFE /* TabBarController.swift in Sources */,
+				933DACA91EFA48D200963AC2 /* TopBarView.swift in Sources */,
 				9356C4BB1EE1DA1900F7D34D /* LogInVC.swift in Sources */,
 				9319AD8B1EEC8612006F28D7 /* RegistrationFB.swift in Sources */,
 				9334D1A31EE33232003B78C7 /* RegistrationVC.swift in Sources */,

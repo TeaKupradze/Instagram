@@ -11,6 +11,9 @@ import SDWebImage
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+
+
+
 class SettingsVC: UIViewController {
 
     @IBOutlet weak var avatar: UIImageView!
@@ -19,10 +22,12 @@ class SettingsVC: UIViewController {
     var settingsObj = [UserFB]()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
        getUserInformation()
-       
-
+       //add top bar
+      let topBar = Bundle.main.loadNibNamed("TopBarView", owner: self, options: nil)? [0] as! TopBarView
+      self.view.addSubview(topBar)
+      
     avatar.contentMode = .scaleAspectFill
     avatar.clipsToBounds = true
         
@@ -30,10 +35,10 @@ class SettingsVC: UIViewController {
     avatar.layer.masksToBounds = true
         
     avatar.layer.borderWidth = 2
-    avatar.layer.borderColor = UIColor.gray.cgColor
+    avatar.layer.borderColor = UIColor.purple.cgColor
 
     }
-    
+  
     fileprivate func UserIsLoggIned() -> Bool{
         return FBSDKAccessToken.current() != nil
     }
